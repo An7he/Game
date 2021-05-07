@@ -1,0 +1,422 @@
+/* general */
+*{
+    padding: 0;
+    margin:0
+}
+@font-face{
+    font-family: Notosans;
+    src: url(NotoSans-Regular.ttf);
+}
+body {
+    min-height: 100vh;
+    font-family: NotoSans;
+}
+button{
+    border: none;
+    box-shadow: none;
+}
+button:focus{
+    outline: none;
+}
+/* fin de general */
+
+/* navbar */
+    .stats{
+        background:#25272d ;
+        box-shadow: 0px 15px 20px -1px rgba(0,0,0,0.59);
+        -webkit-box-shadow: 0px 15px 20px -1px rgba(0,0,0,0.59);
+        -moz-box-shadow: 0px 15px 20px -1px rgba(0,0,0,0.59);
+    }
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        color: #ffffff;
+        padding: 30px;
+    }
+    .dinero{
+        display: flex;
+        justify-content: center;
+        
+        
+    }
+    .xp{
+        display: flex;
+        justify-content: center;
+    }
+    
+/* fin de navbar */
+
+/* botones */
+
+    .boton{
+        cursor: pointer;
+        text-decoration: none;
+        background-color: #535460;
+        border: none;
+        justify-content: space-between;
+        border-radius: 5%;
+        padding: 20px;
+        color: #ffffff;
+    }
+    .boton2{
+        background: #737875;
+        height: 40px;
+        width: 100px;
+    }    
+    .boton:hover{
+        background-color:rgba(112, 116, 156, 0.445);
+    }
+
+/* fin de botones */
+
+/* desplieges / sub menus */
+
+    .despliege{
+        background: #8a899a;
+        width: 120px;
+        padding: 10px;
+        border-bottom: 20px #25272d;
+        color: #ffffff;
+    }
+    .sub-menu2{
+        display: none;
+    }
+    .menu div:hover .sub-menu2{
+        display: block;
+        position: absolute;
+        background: gray;
+        margin-top: 20px;
+        margin-left: -50px;
+    }
+    .sub-menu2 li:hover{
+        background: rgb(128, 128, 128, 0.1);
+    }
+    .menu div:hover .sub-menu2 ul{
+        display: block;
+        
+        margin: 10px;
+    }
+    .menu div:hover .sub-menu2 ul li{
+        width: 150px;
+        padding: 10px;
+        border-bottom: 1px dashed #ffffff;
+        list-style: none;
+        background: transparent;
+        border-radius: 0;
+        text-align: left;
+    }
+    .menu div:hover .sub-menu2 ul li:hover{
+        cursor: pointer;
+        color: #25272d;
+    }
+    .sub-menu1{
+        display: none;
+        padding: 10px;
+    }
+    .sub-menu1 li:hover{
+        background: rgb(128, 128, 128, 0.1);
+    }
+
+/* fin de desplieges / sub menus */
+
+/* menus */
+
+    .menu{
+        display: flex;
+        text-decoration: none;
+        background-color: #535460;
+        border: none;
+        justify-content: space-between;
+        color: #ffffff;
+        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    }
+    .menu div:hover .sub-menu1{
+        display: block;
+        position: absolute;
+        background: gray;
+        margin-top: 20px;
+        margin-left: -50px;
+    }
+    menu div:hover .sub-menu1 ul{
+        display: block;
+        margin: 10px;
+    }
+    .menu div:hover .sub-menu1 ul li{
+        width: 150px;
+        padding: 10px;
+        border-bottom: 1px dashed #ffffff;
+        list-style: none;
+        background: transparent;
+        border-radius: 0;
+        text-align: left;
+    }
+    .menu div:hover .sub-menu1 ul li:hover{
+        cursor: pointer;
+        color: #25272d;
+    }
+
+/* fin de menus */
+
+/* interactivo */
+
+    .pico-activo{
+        width: 50px;
+        height: 50px;
+        background: #24262b;
+        border-radius: 30%;
+        cursor: pointer;
+        border: none;
+    }
+    .pico-activo:hover{
+        width: 50px;
+        height: 50px;
+        background: rgb(36, 38, 43, 0.9);
+        border-radius: 30%;
+        cursor: pointer;
+        border: none;
+    }
+    .pico-cooldown:hover{
+        width: 50px;
+        height: 50px;
+        background: rgb(36, 38, 43, 0.7);
+        border-radius: 30%;
+        cursor: progress;
+        border: none;
+    }
+    .pico-cooldown{
+        width: 50px;
+        height: 50px;
+        background: rgb(36, 38, 43, 0.8);
+        border-radius: 30%;
+        border: none;
+    }
+    .hacha-activo{
+        width: 50px;
+        height: 50px;
+        background: #24262b;
+        border-radius: 30%;
+        cursor: pointer;
+        border: none;
+    }
+    .hacha-activo:hover{
+        width: 50px;
+        height: 50px;
+        background: rgb(36, 38, 43, 0.9);
+        border-radius: 30%;
+        cursor: pointer;
+        border: none;
+    }
+    .hacha-activo:hover{
+        background: rgb(36, 38, 43,0.9);
+    }
+    .hacha-cooldown:hover{
+        width: 50px;
+        height: 50px;
+        background: rgb(36, 38, 43, 0.7);
+        border-radius: 30%;
+        border: none;
+    }
+    .hacha-cooldown{
+        width: 50px;
+        height: 50px;
+        background: rgb(36, 38, 43, 0.8);
+        border-radius: 30%;
+        border: none;
+    }
+
+/* fin de interactivo */
+
+/* svg */
+
+    svg{
+        fill: #947c65
+    }
+
+/* fin de svg */
+
+/* zonas */
+
+    svg.pico .minaI{
+        fill: #947c65;
+    }
+    svg.pico .minaII{
+        fill: #747a75;
+    }
+    svg.pico .minaIII{
+        fill: #d4d5d3;
+    }
+    svg.pico .minaIV{
+        fill: #d1ac2e;
+    }
+    svg.pico .minaV{
+        fill: #c7f5f7;
+    }
+    svg.hacha .bosqueI{
+        fill: #947c65;
+    }
+    svg.hacha .bosqueII{
+        fill: #747a75;
+    }
+    svg.hacha .bosqueIII{
+        fill: #d4d5d3;
+    }
+    svg.hacha .bosqueIV{
+        fill: #d1ac2e;
+    }
+    svg.hacha .bosqueV{
+        fill: #c7f5f7;
+    }
+
+/* fin de zonas */
+
+/* iconos */
+
+    .fab{
+        text-decoration: none;
+
+    }
+    .coins{
+        width: 30px;
+    }
+    .xp2{
+        width: 30px;
+    }
+
+/* fin de iconos */
+
+/* colores */
+
+    .rojo{
+        color: #d9443d;
+        width: 20px;
+        height: 20px;
+    }
+    .verde{
+        color: #d0eb52;
+        width: 20px;
+        height: 20px;
+    }
+    .azul{
+        color: #9dfff8;
+        width: 20px;
+        height: 20px;
+    }
+    .amarillo{
+        color: #eed90f;
+        width: 20px;
+        height: 20px;
+    }
+    .morado{
+        color: #da90e7;
+        width: 20px;
+        height: 20px;
+    }
+    .cafe{
+        color: #584d3f;
+        width: 20px;
+        height: 20px;
+    }
+    .sky{
+        color: #00429a;
+        width: 20px;
+        height: 20px;
+    }
+    .magia{
+        animation: change 3s linear infinite alternate both;
+        width: 20px;
+        height: 20px;
+    }
+    .negro{
+        animation: change2 3s linear infinite alternate both;
+        width: 20px;
+        height: 20px;
+    }
+
+/* fin de colores */
+
+/* mini-animacion */
+
+    @keyframes change {
+        0% {
+            color: #e234be;
+        }
+
+        33%{
+            color: #cf32c8;
+        }
+
+        66% {
+            color:  #b935d2;
+        }
+
+        100%{
+            color: #9f3bdb;
+        }
+    }
+    @keyframes change2 {
+        0% {
+            color: #EE4540;
+        }
+
+        25%{
+            color: #C72C41;
+        }
+
+        50% {
+            color: #801336;
+        }
+
+        75%{
+            color: #510A32;
+        }
+
+        100%{
+            color: #2D142C;
+        }
+    }
+
+/* fin de mi animacion */
+
+/* tienda */
+
+    .shop{
+        background: #737875;
+        display: flex;
+        text-decoration: none;
+        border: none;
+        justify-content: space-between;
+        flex-basis: 100%;
+        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    }
+    .shop .boton2:hover{
+        background: #97998f;
+    }
+
+/* fin de tienda */
+
+/* invetario */
+
+.inventario{
+    background: #70757a;
+    width: 25%;
+    padding: 10px;
+    border-radius: 0 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.inventario .espacios:hover{
+    background: #24262b42;
+    border-radius: 0 50px 50px 0;
+}
+
+/* fin de inventario */
+
+/* efectos */
+
+.efectos{
+    background: #b3ebff;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+/* fin de efectos */

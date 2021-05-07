@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Game</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/ad37438893.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="stats">
+        <div class="navbar">
+            <div class="dinero">
+                <img class="coins" src="https://img.icons8.com/fluent/48/000000/coins.png" />x<div id="num"> 0</div>
+            </div>
+            <div class="xp">
+                <img class="xp2" src="https://img.icons8.com/nolan/96/health-book.png" />x<div id="num2"> 0</div>
+            </div>
+        </div>
+    </div>
+    <div class="mineria">
+        <div class="menu">
+            <div onclick="" class="boton">Menu
+            </div>
+            <div onclick="" class="boton">Exploracion
+            </div>
+            <div onclick="" class="boton">Mineria
+                <div class="sub-menu2">
+                    <ul>
+                        <li onclick="minaI()" >Entrada</li>
+                        <li onclick="minaII()">MinaAbandonada</li>
+                        <li onclick="minaIII()">MinaAntigua</li>
+                        <li onclick="minaIV()">Volcan</li>
+                        <li onclick="minaV()">Profundidades</li>
+                    </ul>
+                </div>
+            </div>
+            <div onclick="" class="boton">Talar
+                <div class="sub-menu1">
+                    <ul>
+                        <li onclick="bosqueI()" >Bosque</li>
+                        <li onclick="bosqueII()">Cerezos</li>
+                        <li onclick="bosqueIII()">Jungla</li>
+                        <li onclick="bosqueIV()">ZonaZer0</li>
+                        <li onclick="bosqueV()">Magma</li>
+                    </ul>
+                </div>
+            </div>
+            <div onclick="" class="boton">Tienda
+            </div>
+        </div>
+    </div>
+    <div class="shop">
+        <div class="linea1Shop">
+            <ul>
+                <button class="boton2" onclick="compra(1, 500)"><p>500</p></i><h4>Fruta<i class="fab fa-apple rojo"></i></h4></button>
+                <button class="boton2" onclick="compra(2, 500)"><p>4k</p><h4>Pocion I<i class="fas fa-vial verde"></i></h4></button>
+                <button class="boton2" onclick="compra(3, 500)"><p>11k</p><h4>Pocion II<i class="fas fa-flask azul"></i></h4></button>
+                <button class="boton2" onclick="compra(4, 500)"><p>20k</p><h4>Mana<i class="fas fa-star amarillo"></i></h4></button>
+                <button class="boton2" onclick="compra(5, 500)"><p>55k</p><h4>Pocion III<i class="fas fa-atom morado"></i></h4></button>
+                <button class="boton2" onclick="compra(6, 500)"><p>143k</p><h4>Escudo<i class="fas fa-shield-alt cafe"></i></h4></button>
+                <button class="boton2" onclick="compra(7, 500)"><p>205k</p><h4>Spm<i class="fas fa-bomb negro"></i></i></h4></button>
+                <button class="boton2" onclick="compra(8, 500)"><p>396k</p><h4>GranLibro<i class="fas fa-book magia"></i></h4></button>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <div>
+            
+        </div>
+        <div class="inventario" id="inventario">
+            <i id="espacio1" class="" onclick="funcionFunciones(1)"></i>
+            <i id="espacio2" class="" onclick="funcionFunciones(2)"></i>
+            <i id="espacio3" class="" onclick="funcionFunciones(3)"></i>
+            <i id="espacio4" class="" onclick="funcionFunciones(4)"></i>
+            <i id="espacio5" class="" onclick="funcionFunciones(5)"></i>
+            <i id="espacio6" class="" onclick="funcionFunciones(6)"></i>
+            <i id="espacio7" class="" onclick="funcionFunciones(7)"></i>
+            <i id="espacio8" class="" onclick="funcionFunciones(8)"></i>
+            <i id="espacio9" class="" onclick="funcionFunciones(9)"></i>
+            <i id="espacio10" class="" onclick="funcionFunciones(10)"></i>
+        </div>
+  
+    </div>
+    <button onclick="minarBoton()" id="minar" class="pico-activo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" class="pico">
+            <g fill="">
+                <path
+                    d="M29.185 33.279c1.166 1.166 3.022 1.221 4.121.121 1.1-1.1 1.045-2.955-.121-4.121L9.921 6.014C8.754 4.847 6.899 4.792 5.8 5.893c-1.101 1.1-1.046 2.955.121 4.121l23.264 23.265z" />
+                <path
+                    d="M3.415 7.657c-.781-.781-.781-2.048 0-2.829l1.414-1.414c.78-.78 2.047-.78 2.828 0 .781.781.781 2.048 0 2.829L6.243 7.657c-.781.781-2.048.781-2.828 0z" />
+                <path
+                    id="afilado"
+                    class=""
+                    d="M23 1C21.143.257 12-2 5 5S.257 21.143 1 23c2 5 1.671-1.063 2-3 1.015-5.971 3.822-9.178 5.822-11.178S14.051 4.029 20 3c1.921-.332 8 0 3-2z" />
+            </g>
+        </svg>
+    </button>
+    <button onclick="talarBoton()" id="talar" class="hacha-activo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none"  class="hacha">
+            <path
+                d="M35.22 30.741l-.024.024c-.97.97-2.542.97-3.511 0L7.835 6.915c-.582-.582-.582-1.525 0-2.107l1.429-1.429c.582-.582 1.525-.582 2.107 0l23.85 23.85c.969.97.969 2.542-.001 3.512z" />
+            <path
+                id="axe"
+                class=""
+                d="M17.765 6.946L14.229 3.41c-.586-.586-1.535-.586-2.121 0L8.573 6.946c-2.128 2.092-3.85 3.015-6.055 3.056-.171 1.573.665 5.193 1.967 6.652 1.692 1.896 4.545 2.495 7.223 2.454-.134-2.363.437-4.422 2.521-6.506l3.535-3.536c.587-.585.587-1.535.001-2.12z" />
+            <path
+                id="contraparte"
+                class=""
+                d="M2.518 10.002C1.767 10.016.962 9.93.064 9.75c-.707 4.95 7.071 12.728 12.021 12.021-.193-.937-.328-1.819-.376-2.663-4.418-1.409-8.107-5.072-9.191-9.106z" />
+        </svg>
+    </button>
+    <script src="data.js"></script>
+</body>
+</html>
