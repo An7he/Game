@@ -48,44 +48,13 @@ const restar = (x) => {
     restar2(inicio, fin)
     inicio = fin
 }
-const compra = (item, valor) => {
-    switch (item, valor) {
-        case item === 1 && fin >= valor :
-            restar(valor)
-            comprable('manzana' ,'fab', 'fa-apple', 'rojo')
-            break;
-        case item === 2 && fin >= valor :
-            restar(valor)
-            comprable('pocionI' ,'fas', 'fa-vial', 'verde')
-            break;
-        case item === 3 && fin >= valor :
-            restar(valor)
-            comprable('pocionII' ,'fas', 'fa-flask', 'azul')
-            break;
-        case item === 4 && fin >= valor :
-            restar(valor)
-            comprable('mana' ,'fas', 'fa-star', 'amarillo')
-            break;
-        case item === 5 && fin >= valor :
-            restar(valor)
-            comprable('pocionIII' ,'fas', 'fa-atom', 'morado')
-            break;
-        case item === 6 && fin >= valor :
-            restar(valor)
-            comprable('escudo' ,'fas', 'fa-shield-alt', 'cafe')
-            break;
-        case item === 7 && fin >= valor :
-            restar(valor)
-            comprable('spm' ,'fas', 'fa-bomb', 'negro')
-            break;
-        case item === 8 && fin >= valor :
-            restar(valor)
-            comprable('libro' ,'fas', 'fa-book', 'magia')
-            break;
-        default :
-            return 'Sin Dinero'
-}}
+const compra = (valor, arr) => {
+    if ( fin >= valor ) {
+        restar(valor)
+        comprable(arr[0], arr[1], arr[2], arr[3])
+    }}
 const comprable = (item, clase1, clase2, color) => {
+    console.log(item, clase1, clase2, color)
     var on = true
     inventario.forEach ( function (e, i) {
         i = inventario.indexOf(e)
@@ -93,9 +62,7 @@ const comprable = (item, clase1, clase2, color) => {
             inventario[i] = item
             document.getElementById(`espacio${i+1}`).classList.add(clase1, clase2, color)
             on = false
-        }})
-}
-
+}})}
 const contadorCooldownMina = (inicio, fin) => {
     inicio++
     if(inicio === fin){
@@ -178,64 +145,22 @@ function talarBoton(){
     talar.classList.toggle("hacha-cooldown")
 };
 function usoSlot(numSlotinventario, espacio){
-    console.log('slotinventario 1', numSlotinventario, inventario)
-    if(inventario[numSlotinventario] === 'manzana' ){
-        espacio.classList.remove('fab', 'fa-apple', 'rojo')
-        inventario[numSlotinventario] = '';
-    }
-    if(inventario[numSlotinventario] === 'pocionI'){
-        espacio.classList.remove('fas', 'fa-vial', 'verde')
-        inventario[numSlotinventario] = '';
-    }
-    if(inventario[numSlotinventario] === 'pocionII'){
-        espacio.classList.remove('fas', 'fa-flask', 'azul')
-        inventario[numSlotinventario] = '';
-    }
-    if(inventario[numSlotinventario] === 'mana'){
-        espacio.classList.remove('fas', 'fa-star', 'amarillo')
-        inventario[numSlotinventario] = '';
-    }
-    if(inventario[numSlotinventario] === 'pocionIII'){
-        espacio.classList.remove('fas', 'fa-atom', 'morado')
-        inventario[numSlotinventario] = '';
-    }
-    if(inventario[numSlotinventario] === 'escudo'){
-        espacio.classList.remove('fas', 'fa-shield-alt', 'cafe')
-        inventario[numSlotinventario] = '';
-    }
-    if(inventario[numSlotinventario] === 'spm'){
-        espacio.classList.remove('fas', 'fa-bomb', 'negro')
-        inventario[numSlotinventario] = '';
-    }
-    if(inventario[numSlotinventario] === 'libro'){
-        espacio.classList.remove('fas', 'fa-book', 'magia')
-        inventario[numSlotinventario] = '';
-    }
-}
-const funcionFunciones = (numInventario) =>{
-
-    if(numInventario === 1){usoSlot(0, espacio1)} 
-    if(numInventario === 2){usoSlot(1, espacio2)} 
-    if(numInventario === 3){usoSlot(2, espacio3)} 
-    if(numInventario === 4){usoSlot(3, espacio4)} 
-    if(numInventario === 5){usoSlot(4, espacio5)} 
-    if(numInventario === 6){usoSlot(5, espacio6)} 
-    if(numInventario === 7){usoSlot(6, espacio7)} 
-    if(numInventario === 8){usoSlot(7, espacio8)} 
-    if(numInventario === 9){usoSlot(8, espacio9)} 
-    if(numInventario === 10){usoSlot(9, espacio10)}
-}
-document.addEventListener('keydown', (event) => {
-    const keyName = event.key;
-    if(event.key === 'p' ){
-        minarBoton()
-    }
-    if(event.key === 't' ){
-        talarBoton()
-    }
-  });
-const efectos = (tipoEfecto) => {
-    if('regeneracion' === tipoEfecto){
-        
-    }
+    var items = [
+        {key : 'manzana', value : ['fab', 'fa-apple', 'rojo']},
+        {key : 'pocionI', value : ['fas', 'fa-vial', 'verde']},
+        {key : 'pocionII', value : ['fas', 'fa-flask', 'azul']},
+        {key : 'mana', value : ['fas', 'fa-star', 'amarillo']},
+        {key : 'pocionIII', value : ['fas', 'fa-atom', 'morado']},
+        {key : 'escudo', value : ['fas', 'fa-shield-alt', 'cafe']},
+        {key : 'spm', value : ['fas', 'fa-bomb', 'negro']},
+        {key : 'libro', value : ['fas', 'fa-book', 'magia']}
+    ]
+    items.forEach(o => {
+        if (inventario[numSlotinventario] === o.key) {
+            console.log(o.value[0], o.value[1], o.value[2], inventario[numSlotinventario])
+            espacio.classList.remove(o.value[0], o.value[1], o.value[2]);
+            inventario[numSlotinventario] = '';
+}})}
+const f = (n) =>{
+    usoSlot(n-1, document.getElementById(`espacio${n}`))
 }
